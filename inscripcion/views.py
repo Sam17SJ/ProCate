@@ -563,7 +563,7 @@ def comunidadesges (request):
 @login_required(login_url='inicio')
 def list_gruposcate(request):
 	catequista=Catequista.objects.get(id_user=request.user.id)
-	cgrupo=Grupo.objects.get(id_grupo=catequista.id_catequista)
+	cgrupo=catequista.id_grupo
 	allgrupo=Grupo.objects.all()
 	print(cgrupo)
 	casis=Asistencia.objects.get(id_asistencia=cgrupo.id_grupo)
